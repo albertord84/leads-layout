@@ -745,8 +745,7 @@ class Welcome extends CI_Controller {
     
     public function login() {
         $datas = $this->input->post();
-        $this->load_language($datas['language']);
-        
+        $this->load_language($datas['language']);        
         if (!$this->session->userdata('id')){
             $this->load->model('class/user_role'); 
             $this->load->model('class/user_model');
@@ -759,15 +758,8 @@ class Welcome extends CI_Controller {
                 //verificar si se existe cliente        
                 $user_row = $this->user_model->verify_account_email($datas, $type);
                 //$verificar = true;
-                if($user_row){      
-                    /*if($datas['language'] != "PT" && $datas['language'] != "ES" && $datas['language'] != "EN")
-                        $datas['language'] = $user_row['language'];            
-                    if($user_row['language'] != $datas['language']){
-                        $this->user_model->update_language($user_row['id'], $datas['language']);
-                    }*/
-                        
-                    $this->user_model->set_session($user_row['id'],$this->session);
-                   
+                if($user_row){  
+                    $this->user_model->set_session($user_row['id'],$this->session);                   
                     $result['success'] = true;
                     $result['message'] = 'Login success';
                     if($user_row['role_id'] == user_role::CLIENT){
@@ -790,14 +782,26 @@ class Welcome extends CI_Controller {
                 $result['success'] = false;
                 $this->T("Estrutura incorreta para o nome de usuário.", array(), $GLOBALS['language']); 
                 $result['resource'] = 'index';
-            }
-        
+            }        
         }
         else {
             $result['success'] = false;
             $result['message'] = $this->T("Verifique que nenhuma sessão no sistema está aberta.", array(), $GLOBALS['language']); 
             $result['resource'] = 'index';
         }
+//        $this->user_model->set_session($user_row['id'],$this->session);                   
+//        $result['success'] = true;
+//        $result['message'] = 'Login success';
+//        if($user_row['role_id'] == user_role::CLIENT){
+//            $result['resource'] = 'client';
+//        }
+//        else{
+//            if($user_row['role_id'] == user_role::ADMIN)
+//                $result['resource'] = 'admin';
+//            else{
+//                $result['resource'] = 'index';
+//            }                            
+//        }
         echo json_encode($result);
     }
     
