@@ -758,7 +758,7 @@ class Welcome extends CI_Controller {
                 //verificar si se existe cliente        
                 $user_row = $this->user_model->verify_account_email($datas, $type);
                 //$verificar = true;
-                if($user_row){  
+                if($user_row){
                     $this->user_model->set_session($user_row['id'],$this->session);                   
                     $result['success'] = true;
                     $result['message'] = 'Login success';
