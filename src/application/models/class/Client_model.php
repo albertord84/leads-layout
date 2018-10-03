@@ -438,7 +438,7 @@ class Client_model extends CI_Model {
         }                
     }
     
-    public function amount_leads_by_client($id_client, $id_campaing = NULL, $all = NULL){         
+    public function amount_leads_by_client($id_client, $id_campaing = NULL, $sold = 1){         
         $result = 0;
          try{
             $query = "SELECT COUNT(dumbu_emails_db.leads.id) FROM dumbu_emails_db.leads ";
@@ -449,8 +449,8 @@ class Client_model extends CI_Model {
             if($id_campaing){
                 $query .= " AND dumbu_emails_db.campaings.id = ".$id_campaing; 
             }
-            if(!$all){
-                $query .= " AND dumbu_emails_db.leads.sold = 0"; 
+            if($sold == 0 || $sold == 1){
+                $query .= " AND dumbu_emails_db.leads.sold = ".$sold; 
             }
             $query .= ";";
             $query_result = $this->db->query($query);

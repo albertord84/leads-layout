@@ -690,6 +690,42 @@
             </div>
             <!-- Fecha Modal Extraer Leads -->
             
+            <!-- Modal Pagar na hora-->
+            <div id="pay_now" class="modal fade" role="dialog">
+                <div class="modal-dialog mxw-600">
+                    <div class="modal-content fleft100 text-center">
+                        <div class="fleft100 bk-silver pd-20">
+                            <a class="close" data-dismiss="modal" >&times;</a>
+                            <h3>Leads na hora</h3>
+                        </div>
+                        <div class="fleft100 text-center m-top20">
+                            <div class="col-md-1 col-sm-1 col-xs-12 text-center">                                
+                            </div>
+                            <div class="col-md-10 col-sm-10 col-xs-12 text-center">                                
+                            Com esta opção você pode fazer o pagamento de seus leads que ainda estiverem sem pagar. Só será permitido fazer esta ação uma vez por dia.
+                            </div>
+                            <div class="col-md-1 col-sm-1 col-xs-12 text-center">                                
+                            </div>
+                        </div>
+                        <div class="fleft100 m-top20"> 
+                            Leads sem pagar: <b><span id="leads_unpaid"></span></b> <br>
+                        </div>
+                        <div class="m-top20">
+                            <div class="col-md-3 col-sm-3 col-xs-12 text-center">                                
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 text-center">
+                                <button id = "pay_leads" type="button" class="btn btn-mlds btnblue m-top10">Comprar leads</button>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-12 text-center">                            
+                            </div>                            
+                        </div>                        
+                        <div class="fleft100 pd-20">                            
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+            <!-- Fecha Modal Pagar na hora-->
+            
             <section class="topo-home fleft100 bk-black">
                     <header class="fleft100 pd-tb20">
                             <div class="container">

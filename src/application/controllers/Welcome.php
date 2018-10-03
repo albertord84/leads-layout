@@ -2685,5 +2685,25 @@ class Welcome extends CI_Controller {
         } 
         $this->load->view('faq_view', $param);
     }
+    
+    public function unpaid_leads(){
+        $this->load_language();
+        $this->load->model('class/user_role');        
+        $this->load->model('class/client_model');        
+        if ($this->session->userdata('role_id')==user_role::CLIENT){            
+            $id = $this->session->userdata('id');
+            $unpaid = $this->client_model->amount_leads_by_client($id, NULL, 0);
+
+            $result['success'] = true;
+            $result['message'] = $unpaid;
+            $result['resource'] = 'client_page';    
+        }
+        else{            
+            $result['success'] = false;
+            $result['message'] = $this->T("Não existe sessão ativa", array(), $GLOBALS['language']);
+            $result['resource'] = 'front_page';
+        }
+        echo json_encode($result);
+    }
 
 }

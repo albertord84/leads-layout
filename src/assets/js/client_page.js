@@ -1567,6 +1567,27 @@ $(document).ready(function () {
     $("#daily_value").maskMoney();
     $("#edit_daily_value").maskMoney();
     $("#boleto_value").maskMoney();
+    
+    $("#do_pay_now").click(function () {         
+       $.ajax({
+            url: base_url + 'index.php/welcome/unpaid_leads',
+            data:  {                                        
+            },   
+            type: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                if (response['success']) {
+                    document.getElementById('leads_unpaid').innerHTML = response['message'];
+                    //$('#leads_unpaid').val(response['message']);
+                } else {
+                    modal_alert_message(response['message']);
+                }
+            },
+            error: function (xhr, status) {
+                
+            }
+        });
+    });
 });
    
 function reset_element(element_selector, style) {
