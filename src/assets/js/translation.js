@@ -236,9 +236,9 @@ var Translation = {
             "EN": "Check the data provided" 
         },
 "Formato incorreto para o cpf": 
-        {   "PT": "Formato incorreto para o cpf",
-            "ES": "Formato incorrecto para el cpf",
-            "EN": "Incorrect format for cpf" 
+        {   "PT": "Formato incorreto para o CPF/CNPJ",
+            "ES": "Formato incorrecto para el CPF/CNPJ",
+            "EN": "Incorrect format for CPF/CNPJ" 
         },
 "O valor minimo por boleto deve ser a partir de": 
         {   "PT": "O valor minimo por boleto deve ser a partir de",

@@ -512,7 +512,7 @@
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-12 pd-lr5">
                                                             <!--<input id="" type="text" placeholder="CPF">-->
-                                                        <input id="boleto_cpf" value="" placeholder="CPF" type="text" class = "number cpf" maxlength="11">
+                                                        <input id="boleto_cpf" value="" placeholder="CPF/CNPJ" type="text" class = "number" maxlength="14">
                                                     </div>
                                                     <div class="col-md-6 col-sm-6 col-xs-12 pd-lr5">
                                                         <div style="width: 65%; float:left">
